@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 import { createThemes } from 'tw-colors';
-import colors, { black } from 'tailwindcss/colors';
+import colors from 'tailwindcss/colors';
 
 const baseColors = [
   'gray',
@@ -50,9 +50,8 @@ const themes = {
 const config: Config = {
   darkMode: 'class',
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {

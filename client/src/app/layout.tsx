@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { DashboardWrapper } from '../widgets/DashboardWrapper';
 import './globals.css';
+import { Providers } from './providers';
+import { DashboardWrapper } from '@/widgets/DashboardWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,9 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light">
+    <html lang="en">
       <body className={inter.className}>
-        <DashboardWrapper>{children}</DashboardWrapper>
+        <Providers>
+          <DashboardWrapper>{children}</DashboardWrapper>
+        </Providers>
       </body>
     </html>
   );
