@@ -1,5 +1,5 @@
 import { useAppSelector } from '@/app/providers/StoreProvider';
-import { setIsSidebarCollapsed } from '@/state';
+import { setIsSidebarCollapsed } from '@/shared/state';
 import { Menu } from 'lucide-react';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';

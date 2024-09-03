@@ -2,7 +2,7 @@
 
 import { useAppSelector } from '@/app/providers/StoreProvider/config/store';
 import { ToggleSidebarBtn } from '@/features/ToggleSidebarBtn';
-import { setIsDarkMode } from '@/state';
+import { setIsDarkMode } from '@/shared/state';
 import { Bell, Menu, Moon, Settings, Sun } from 'lucide-react';
 import Link from 'next/link';
 import { useCallback } from 'react';

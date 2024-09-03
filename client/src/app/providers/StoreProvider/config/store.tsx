@@ -1,5 +1,5 @@
-import globalReducer from '@/state';
-import { api } from '@/state/api';
+import globalReducer from '@/shared/state';
+import { api } from '@/shared/state/api';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
