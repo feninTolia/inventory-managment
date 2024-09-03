@@ -3,9 +3,7 @@ import { RatingBlock } from '@/entities/Rating';
 import { useGetDashboardMetricsQuery } from '@/shared/state/api';
 import { ShoppingBag } from 'lucide-react';
 
-interface IProps {}
-
-export const CardPopularProduct = (props: IProps) => {
+export const CardPopularProducts = () => {
   const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
   console.log(dashboardMetrics);
 

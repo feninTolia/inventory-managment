@@ -1,1 +1,0 @@
-export { CardPopularProduct } from './CardPopularProduct';
