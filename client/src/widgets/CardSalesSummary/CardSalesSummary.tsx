@@ -107,7 +107,7 @@ export const CardSalesSummary = () => {
                 />
                 <Tooltip
                   formatter={(value: number) => {
-                    return [`${value.toLocaleString('uk')}`];
+                    return [`$${value.toLocaleString('uk')}`];
                   }}
                   labelFormatter={(label) => {
                     const date = new Date(label);
