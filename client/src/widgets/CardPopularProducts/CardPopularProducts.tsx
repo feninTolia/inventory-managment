@@ -5,7 +5,6 @@ import { ShoppingBag } from 'lucide-react';
 
 export const CardPopularProducts = () => {
   const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
-  console.log(dashboardMetrics);
 
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md pb-16 rounded-2xl">

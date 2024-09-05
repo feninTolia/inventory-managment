@@ -36,6 +36,7 @@ export const CardPurchaseSummary = () => {
             <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
               Purchase Summary
             </h2>
+            <hr />
           </div>
 
           {/* body */}
@@ -67,10 +68,10 @@ export const CardPurchaseSummary = () => {
             </div>
 
             {/* chart */}
-            <ResponsiveContainer width={'100%'} height={225} className={'px-7'}>
+            <ResponsiveContainer width={'100%'} height={200} className={'p-2'}>
               <AreaChart
                 data={purchaseData}
-                margin={{ left: -50, right: 0, bottom: 0, top: 0 }}
+                margin={{ left: -50, right: 0, bottom: 65, top: 0 }}
               >
                 <CartesianGrid
                   strokeDasharray=""

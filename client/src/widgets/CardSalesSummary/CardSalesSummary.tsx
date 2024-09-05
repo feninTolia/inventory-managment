@@ -55,11 +55,12 @@ export const CardSalesSummary = () => {
             <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
               Sales Summary
             </h2>
+            <hr />
           </div>
           {/* body */}
           <div>
             {/* body header */}
-            <div className="flex-between mb-6 px-7">
+            <div className="flex-between mb-6 px-7 mt-7">
               <div>
                 <div className="text-lg font-medium">
                   <p className="text-xs text-gray-400">Value</p>
@@ -84,7 +85,7 @@ export const CardSalesSummary = () => {
             </div>
 
             {/* Chart */}
-            <ResponsiveContainer width={'100%'} height={350} className={'px-7'}>
+            <ResponsiveContainer width={'100%'} height={330} className={'px-7'}>
               <BarChart
                 data={salesData}
                 margin={{ left: -25, right: 0, bottom: 0, top: 0 }}

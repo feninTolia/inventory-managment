@@ -1,4 +1,5 @@
 import { CardPurchaseSummary } from '@/widgets/ CardPurchaseSummary';
+import { CardExpenseSummary } from '@/widgets/CardExpenseSummary';
 import { CardPopularProducts } from '@/widgets/CardPopularProducts';
 import { CardSalesSummary } from '@/widgets/CardSalesSummary/CardSalesSummary';
 
@@ -8,7 +9,7 @@ const Dashboard = () => {
       <CardPopularProducts />
       <CardSalesSummary />
       <CardPurchaseSummary />
-      <div className="row-span-3 bg-white shadow-md rounded-2xl"></div>
+      <CardExpenseSummary />
       <div className="md:row-span-1 xl:row-span-2 bg-white shadow-md rounded-2xl"></div>
       <div className="md:row-span-1 xl:row-span-2 bg-white shadow-md rounded-2xl"></div>
       <div className="md:row-span-1 xl:row-span-2 bg-white shadow-md rounded-2xl"></div>

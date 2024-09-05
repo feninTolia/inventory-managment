@@ -27,7 +27,7 @@ interface IExpenseSummary {
 interface IExpenseByCategorySummary {
   expenseByCategoryId: string;
   category: string;
-  amount: number;
+  amount: string;
   date: string;
 }
 
