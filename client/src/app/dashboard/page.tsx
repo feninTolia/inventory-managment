@@ -2,6 +2,14 @@ import { CardPurchaseSummary } from '@/widgets/ CardPurchaseSummary';
 import { CardExpenseSummary } from '@/widgets/CardExpenseSummary';
 import { CardPopularProducts } from '@/widgets/CardPopularProducts';
 import { CardSalesSummary } from '@/widgets/CardSalesSummary/CardSalesSummary';
+import { StatCard } from '@/widgets/StatCard';
+import {
+  CheckCircle,
+  Package,
+  Tag,
+  TrendingDown,
+  TrendingUp,
+} from 'lucide-react';
 
 const Dashboard = () => {
   return (
@@ -10,9 +18,63 @@ const Dashboard = () => {
       <CardSalesSummary />
       <CardPurchaseSummary />
       <CardExpenseSummary />
-      <div className="md:row-span-1 xl:row-span-2 bg-white shadow-md rounded-2xl"></div>
-      <div className="md:row-span-1 xl:row-span-2 bg-white shadow-md rounded-2xl"></div>
-      <div className="md:row-span-1 xl:row-span-2 bg-white shadow-md rounded-2xl"></div>
+      <StatCard
+        title="Customer & Expenses"
+        primaryIcon={<Package className="text-blue-600 w-6 h-6" />}
+        dateRange="22 - 29 October 2023"
+        details={[
+          {
+            title: 'Customer Growth',
+            amount: '175.00',
+            changePercentage: 131,
+            IconComponent: TrendingUp,
+          },
+          {
+            title: 'Expenses',
+            amount: '10.00',
+            changePercentage: -56,
+            IconComponent: TrendingDown,
+          },
+        ]}
+      />
+      <StatCard
+        title="Dues & Pending Orders"
+        primaryIcon={<CheckCircle className="text-blue-600 w-6 h-6" />}
+        dateRange="22 - 29 October 2023"
+        details={[
+          {
+            title: 'Dues',
+            amount: '250.00',
+            changePercentage: -23,
+            IconComponent: TrendingDown,
+          },
+          {
+            title: 'Pending Orders',
+            amount: '147.00',
+            changePercentage: 36,
+            IconComponent: TrendingUp,
+          },
+        ]}
+      />
+      <StatCard
+        title="Sales & Discount"
+        primaryIcon={<Tag className="text-blue-600 w-6 h-6" />}
+        dateRange="22 - 29 October 2023"
+        details={[
+          {
+            title: 'Sales',
+            amount: '1000.00',
+            changePercentage: 71,
+            IconComponent: TrendingUp,
+          },
+          {
+            title: 'Discount',
+            amount: '200.00',
+            changePercentage: -16,
+            IconComponent: TrendingDown,
+          },
+        ]}
+      />
     </div>
   );
 };
