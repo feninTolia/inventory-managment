@@ -1,7 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-interface IProduct {
+export interface IProduct {
   productId: string;
+  name: string;
+  price: number;
+  rating?: number;
+  stockQuantity: number;
+}
+interface INewProduct {
   name: string;
   price: number;
   rating?: number;
@@ -45,13 +51,32 @@ export const api = createApi({
     baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
     //   prepareHeaders:()=>{}
   }),
-  tagTypes: ['DashboardMetrics'],
+  tagTypes: ['DashboardMetrics', 'Products'],
   endpoints: (build) => ({
     getDashboardMetrics: build.query<IDashboardMetrics, void>({
       query: () => '/dashboard',
       providesTags: ['DashboardMetrics'],
     }),
+    getProducts: build.query<IProduct[], string | void>({
+      query: (search) => ({
+        url: '/products',
+        params: search ? { search } : {},
+      }),
+      providesTags: ['Products'],
+    }),
+    createProduct: build.mutation<IProduct, INewProduct>({
+      query: (newProduct) => ({
+        url: '/products',
+        method: 'POST',
+        body: newProduct,
+      }),
+      invalidatesTags: ['Products'],
+    }),
   }),
 });
 
-export const { useGetDashboardMetricsQuery } = api;
+export const {
+  useGetDashboardMetricsQuery,
+  useGetProductsQuery,
+  useCreateProductMutation,
+} = api;

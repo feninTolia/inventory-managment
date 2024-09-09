@@ -19,7 +19,7 @@ const getProducts = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         const products = yield prisma.products.findMany({
             where: { name: { contains: search } },
         });
-        res.json({ products });
+        res.json(products);
     }
     catch (error) {
         res.status(500).json({ message: 'Error retrieving products' });

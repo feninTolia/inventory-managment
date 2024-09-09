@@ -10,7 +10,7 @@ export const getProducts = async (req: Request, res: Response) => {
       where: { name: { contains: search } },
     });
 
-    res.json({ products });
+    res.json(products);
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving products' });
   }
