@@ -45,13 +45,18 @@ interface IDashboardMetrics {
   expenseByCategorySummary: IExpenseByCategorySummary[];
 }
 
+export interface IUser {
+  userId: string;
+  name: string;
+  email: string;
+}
+
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
-    //   prepareHeaders:()=>{}
   }),
-  tagTypes: ['DashboardMetrics', 'Products'],
+  tagTypes: ['DashboardMetrics', 'Products', 'Users'],
   endpoints: (build) => ({
     getDashboardMetrics: build.query<IDashboardMetrics, void>({
       query: () => '/dashboard',
@@ -72,6 +77,10 @@ export const api = createApi({
       }),
       invalidatesTags: ['Products'],
     }),
+    getUsers: build.query<IUser[], void>({
+      query: () => '/users',
+      providesTags: ['Users'],
+    }),
   }),
 });
 
@@ -79,4 +88,5 @@ export const {
   useGetDashboardMetricsQuery,
   useGetProductsQuery,
   useCreateProductMutation,
+  useGetUsersQuery,
 } = api;

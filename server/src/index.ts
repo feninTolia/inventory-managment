@@ -6,6 +6,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import dashboardRoutes from './routes/dashboardRoutes';
 import productRoutes from './routes/productRoutes';
+import userRoutes from './routes/userRoutes';
 
 // CONFIGURATION
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(cors());
 // ROUTES
 app.use('/dashboard', dashboardRoutes);
 app.use('/products', productRoutes);
+app.use('/users', userRoutes);
 
 // SERVER
 const PORT = process.env.PORT ?? 3002;
