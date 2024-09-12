@@ -3,7 +3,8 @@
 import { useAppSelector } from '@/app/providers/StoreProvider/config/store';
 import { ToggleSidebarBtn } from '@/features/ToggleSidebarBtn';
 import { setIsDarkMode } from '@/shared/state';
-import { Bell, Menu, Moon, Settings, Sun } from 'lucide-react';
+import { Bell, Moon, Settings, Sun } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
@@ -52,13 +53,15 @@ export const Navbar = () => {
           </div>
           <hr className="border-gray-300 h-7 w-0 border mx-3" />
           <div className="flex items-center gap-3 cursor-pointer">
-            {/* <Image
-              src={''}
+            <Image
+              src={
+                'https://s3-inventorymanagement-ftoe.s3.eu-central-1.amazonaws.com/profile.jpg'
+              }
               alt={'Avatar'}
-              width={34}
-              height={34}
-              className="bg-gray-300 rounded-full overflow-hidden text-xs"
-            /> */}
+              width={50}
+              height={50}
+              className="bg-gray-300 rounded-full h-full object-cover"
+            />
             <span className=" font-semibold">FTOE</span>
           </div>
         </div>

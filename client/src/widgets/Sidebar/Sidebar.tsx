@@ -10,6 +10,7 @@ import {
   SlidersHorizontal,
   User,
 } from 'lucide-react';
+import Image from 'next/image';
 
 export const Sidebar = () => {
   const isSidebarCollapsed = useAppSelector(
@@ -28,7 +29,15 @@ export const Sidebar = () => {
           isSidebarCollapsed ? 'px-5' : 'px-8'
         }`}
       >
-        <div>logo</div>
+        <Image
+          src={
+            'https://s3-inventorymanagement-ftoe.s3.eu-central-1.amazonaws.com/logo.png'
+          }
+          alt={'festock logo'}
+          width={27}
+          height={27}
+          className="rounded w-8 "
+        />
         <h1
           className={`text-2xl font-extrabold ${
             isSidebarCollapsed ? 'hidden' : 'block '
