@@ -24,7 +24,7 @@ const mockSettings: IUserSettings[] = [
   { label: 'Language', value: 'English', type: 'text' },
 ];
 
-const page = () => {
+const Settings = () => {
   const [userSettings, setUserSettings] =
     useState<IUserSettings[]>(mockSettings);
 
@@ -93,4 +93,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Settings;
