@@ -1,6 +1,9 @@
 const fs = require('fs');
 const jsonServer = require('json-server');
 const path = require('path');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const server = jsonServer.create();
 
@@ -49,7 +52,7 @@ server.get('/dashboard', (req, res) => {
 });
 
 server.use(router);
-const PORT = 3002;
+const PORT = process.env.PORT || 10000;
 
 server.listen(PORT, () => {
   console.log('server is running on - ' + PORT);
