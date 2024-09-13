@@ -76,6 +76,7 @@ const Products = () => {
         <button
           className="flex items-center bg-blue-500 hover:bg-blue-700 text-gray-200 font-bold rounded py-2 px-4"
           onClick={handleOpenModal}
+          disabled //TODO
         >
           <PlusCircleIcon className="w-5 h-5 mr-2 !text-gray-200" />
           Create product
